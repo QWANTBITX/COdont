@@ -1,0 +1,17 @@
+Estimados estudiantes,
+
+Cordial saludo.
+
+Les informo que el día de mañana no tendremos jornada de clase. Sin embargo, es importante que comiencen a avanzar en el ejercicio correspondiente a la tercera nota.
+
+Como ya tienen los grupos conformados y el tema asignado, deben iniciar con la definición del enunciado del proyecto, basado en la temática asignada.
+
+Adicionalmente, es necesario avanzar en los siguientes aspectos:
+
+Definición del modelo de datos.
+Identificación y descripción de las features (funcionalidades) a desarrollar.
+Propuesta del diseño visual (paleta de colores, estilo, etc.).
+Elaboración de un primer prototipo de la aplicación, utilizando herramientas como Figma o Stitch.
+La idea es que, para la próxima clase, ya cuenten con un avance claro en estos puntos.
+
+Quedo atento a cualquier inquietud.
