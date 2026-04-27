@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#006483",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001d31",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#89f5e7",
+                    "primary": "#006194",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "tertiary-container": "#0f7ea3",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "outline": "#6e797e",
+                    "on-surface-variant": "#3e484d",
+                    "primary-fixed": "#cce5ff",
+                    "on-secondary-container": "#006f66",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary": "#006a61",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "outline-variant": "#bdc8ce",
+                    "on-tertiary-fixed-variant": "#004d66",
+                    "surface-bright": "#f7f9fb",
+                    "surface-tint": "#006398",
+                    "inverse-surface": "#2d3133",
+                    "primary-container": "#007bb9",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#004b73",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#c0e8ff",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#86f2e4",
+                    "on-secondary-fixed": "#00201d",
+                    "on-tertiary-container": "#fbfdff",
+                    "on-secondary-fixed-variant": "#005049",
+                    "on-tertiary-fixed": "#001e2b",
+                    "on-primary-container": "#fdfcff",
+                    "primary-fixed-dim": "#93ccff",
+                    "tertiary-fixed-dim": "#7bd1fa",
+                    "inverse-primary": "#93ccff",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #006194 0%, #007bb9 100%);
+      }
+      .ghost-border {
+        border: 1px solid rgba(189, 200, 206, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-bold tracking-tighter text-cyan-900 dark:text-cyan-100 font-headline">Odontolyt</div>
+<div class="hidden md:flex items-center gap-8 font-manrope tracking-tight font-medium">
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-800 hover:opacity-80 transition-opacity duration-300" href="servicios.html">Servicios</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-800 transition-all duration-300" href="sobre_nosotros.html">Sobre Nosotros</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-800 transition-all duration-300" href="sobre_nosotros.html">Equipo</a>
+<a class="text-cyan-700 dark:text-cyan-300 border-b-2 border-cyan-600 pb-1 hover:opacity-80 transition-opacity duration-300" href="contacto.html">Contacto</a>
+</div>
+<a href="inicio_de_sesion.html" class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-xl font-medium shadow-sm active:scale-95 transition-all duration-300">
+            Iniciar Sesión
+        </a>
+</div>
+</nav>
+<main class="pt-24 pb-16">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 py-16 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline text-primary tracking-tight leading-[1.1]">
+                    Excelencia Clínica, <br/>
+<span class="text-secondary">Entorno Sereno.</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-lg leading-relaxed">
+                    Experimente un nuevo estándar en cuidado dental. Ya sea que tenga una duda sobre nuestros servicios o esté listo para comenzar, nuestro equipo está aquí para guiarle.
+                </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-outline uppercase tracking-widest">Teléfono</p>
+<p class="text-xl font-headline font-bold text-on-surface">+1 (555) 234-5678</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-outline uppercase tracking-widest">Dirección</p>
+<p class="text-xl font-headline font-bold text-on-surface">1200 Odontolyt Blvd, Suite 400<br/>San Francisco, CA 94105</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Interior moderno de consultorio dental de alta gama con luz natural suave, muebles blancos minimalistas y grandes ventanales con vistas a la ciudad" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXCaSbAWz5EvL5JwVfD9HoG-vWuCUzkV3c5j9MYwf64La-AJLBd1mGR6FB_UEYMzl7uulfGvsiRagZAdADNsloFWmeCOZO2EvCUY0GJMJ_HzF-VDc3zT97_TIIiDDtSuifo6mMzinqjbAqJzDJU1-zU_2xCME8wq6HoBy67m-nuVcWYhGPqWAsmM0a-chD-eDZCNOwNO8bAuJOc3UW-T49hepfnWvJUEfOJmfXkaSvUwe0ST9MpzcHGQlqq0cT-xlANsaagrh8H1s"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-[1.5rem] shadow-xl ghost-border glass-effect bg-opacity-90 max-w-xs">
+<h4 class="font-headline font-bold text-secondary text-lg mb-2">Horario de Clínica</h4>
+<div class="space-y-2">
+<div class="flex justify-between gap-4">
+<span class="text-on-surface-variant font-medium">Lun — Vie</span>
+<span class="text-on-surface font-semibold">8:00 — 19:00</span>
+</div>
+<div class="flex justify-between gap-4">
+<span class="text-on-surface-variant font-medium">Sábado</span>
+<span class="text-on-surface font-semibold">9:00 — 15:00</span>
+</div>
+<div class="flex justify-between gap-4">
+<span class="text-on-surface-variant font-medium">Domingo</span>
+<span class="text-secondary font-semibold">Solo Emergencias</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Form & Map Section (Bento Style) -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Contact Form Card -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-[2rem] p-10 md:p-14 shadow-sm ghost-border">
+<div class="mb-10">
+<h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight mb-4">Envíanos un mensaje</h2>
+<p class="text-on-surface-variant">Dinos cómo podemos ayudarte. Nuestros coordinadores de pacientes responderán en un plazo de 2 horas hábiles.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="Juan Pérez" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1">Correo Electrónico</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1">Servicio de Interés</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary appearance-none transition-all duration-300">
+<option>Odontología General</option>
+<option>Consulta Estética</option>
+<option>Implantes Dentales</option>
+<option>Ortodoncia</option>
+<option>Cuidado de Emergencia</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-semibold text-on-surface ml-1">Tu Mensaje</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-4 focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="¿Cómo podemos asistirte hoy?" rows="4"></textarea>
+</div>
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-5 rounded-xl font-bold text-lg shadow-lg active:scale-[0.98] transition-all duration-300">
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+<!-- Map Card -->
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="flex-grow bg-surface-container-lowest rounded-[2rem] overflow-hidden shadow-sm ghost-border relative min-h-[400px]">
+<img class="w-full h-full object-cover opacity-80 grayscale-[0.5] contrast-[1.1]" data-alt="Ilustración de mapa limpia y minimalista que muestra una ubicación central de la ciudad con un marcador de marca en verde azulado" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJUJd3yRN8tCAOdsPWTfi9FzlksTV8wpnpEQggVeGOYkAVFuUon5VW-l1sVO8DrcFd5VIuKUhPlubiAMtDA4kE32fjoHGPCdRgrGel15mLxzhdAWHaHOSlR0diHf5ttPX8BF_LmORzvyrDA1-U892YopfPa7kYl-2t9P1ad-pWFq-fBz3gwV_2QB7MmVmvjaOvhy6s8Ic34x2kR35YLCuyezGYBNfWAgKDdVsrXE775pndZgOGVXqQG8IZh1f_KrByrnr5EPmv0a4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary p-4 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-3xl" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+<div class="bg-secondary-container p-8 rounded-[2rem] flex items-center justify-between group cursor-pointer hover:bg-secondary transition-colors duration-500">
+<div>
+<h3 class="font-headline font-bold text-on-secondary-container group-hover:text-on-secondary text-xl">Portal del Paciente</h3>
+<p class="text-on-secondary-container/80 group-hover:text-on-secondary/80">Accede a tus registros clínicos y formularios</p>
+</div>
+<div class="w-12 h-12 bg-on-secondary-container/10 rounded-full flex items-center justify-center text-on-secondary-container group-hover:text-on-secondary group-hover:bg-on-secondary/10">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ CTA Section -->
+<section class="max-w-7xl mx-auto px-8 py-24 text-center">
+<h2 class="text-4xl font-headline font-extrabold text-on-surface mb-6 tracking-tight">¿Prefieres hablar directamente?</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-12 text-lg">Nuestro equipo de atención personalizada está disponible para consultas virtuales o para ayudarte a navegar tus beneficios de seguro.</p>
+<div class="flex flex-wrap justify-center gap-6">
+<button class="px-10 py-5 bg-surface-container-lowest rounded-xl font-bold text-primary ghost-border hover:bg-surface-container-high transition-all duration-300">
+                Llamar a Atención
+            </button>
+<button class="px-10 py-5 bg-gradient-to-br from-secondary to-on-secondary-container text-on-secondary rounded-xl font-bold shadow-lg hover:opacity-90 transition-all duration-300">
+                Reservar Tratamiento
+            </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[2rem] bg-slate-100 dark:bg-slate-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-16">
+<div class="space-y-6">
+<div class="text-lg font-bold text-cyan-800 dark:text-cyan-200">Odontolyt</div>
+<p class="text-slate-500 dark:text-slate-500 font-inter text-sm leading-relaxed">© 2024 Odontolyt Care. Serenidad Clínica Definida.</p>
+</div>
+<div>
+<h4 class="font-headline font-bold text-cyan-900 dark:text-cyan-100 mb-6">Clínica</h4>
+<ul class="space-y-4 font-inter text-sm leading-relaxed">
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Servicios</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Portal del Paciente</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Nuestro Equipo</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Galería de Casos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-cyan-900 dark:text-cyan-100 mb-6">Soporte al Paciente</h4>
+<ul class="space-y-4 font-inter text-sm leading-relaxed">
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Política de Privacidad</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Términos de Servicio</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Cuidado de Emergencia</a></li>
+<li><a class="text-slate-500 dark:text-slate-500 hover:text-cyan-600 transition-colors" href="#">Seguros</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-cyan-900 dark:text-cyan-100 mb-6">Conectar</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

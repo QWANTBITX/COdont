@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis Citas | Odontolyt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed": "#cce5ff",
+                        "primary-fixed-dim": "#93ccff",
+                        "primary": "#006194",
+                        "outline-variant": "#bdc8ce",
+                        "on-primary-fixed-variant": "#004b73",
+                        "inverse-primary": "#93ccff",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#c0e8ff",
+                        "secondary-fixed": "#89f5e7",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#0f7ea3",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#004d66",
+                        "primary-container": "#007bb9",
+                        "on-background": "#191c1e",
+                        "outline": "#6e797e",
+                        "surface-variant": "#e0e3e5",
+                        "secondary": "#006a61",
+                        "background": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#fdfcff",
+                        "surface-tint": "#006398",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed": "#00201d",
+                        "on-tertiary-fixed": "#001e2b",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface-variant": "#3e484d",
+                        "tertiary": "#006483",
+                        "on-tertiary-container": "#fbfdff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#86f2e4",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed-dim": "#7bd1fa",
+                        "on-secondary-container": "#006f66",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#001d31",
+                        "surface": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background min-h-screen flex flex-row">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="hidden md:flex flex-col w-72 h-screen sticky top-0 bg-white border-r border-outline-variant/15 shadow-2xl shadow-slate-200/50 z-40">
+<div class="p-8">
+<h1 class="text-2xl font-extrabold text-primary font-headline">Odontolyt</h1>
+<div class="mt-8">
+<p class="text-xs font-bold uppercase tracking-widest text-outline mb-4">Portal Paciente</p>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-600 px-4 py-3 mx-2 hover:bg-slate-50 transition-colors flex items-center gap-3 rounded-xl font-medium" href="panel_de_gestion.html">
+<span class="material-symbols-outlined">grid_view</span>
+                        Dashboard
+                    </a>
+<!-- Active State: Mis Citas -->
+<a class="bg-primary/5 text-primary rounded-xl px-4 py-3 mx-2 flex items-center gap-3 font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                        Mis Citas
+                    </a>
+<a class="text-slate-600 px-4 py-3 mx-2 hover:bg-slate-50 transition-colors flex items-center gap-3 rounded-xl font-medium" href="historial_clinico_digital.html">
+<span class="material-symbols-outlined">clinical_notes</span>
+                        Resultados
+                    </a>
+<a class="text-slate-600 px-4 py-3 mx-2 hover:bg-slate-50 transition-colors flex items-center gap-3 rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">person</span>
+                        Mi Perfil
+                    </a>
+<a class="text-slate-600 px-4 py-3 mx-2 hover:bg-slate-50 transition-colors flex items-center gap-3 rounded-xl font-medium" href="#">
+<span class="material-symbols-outlined">payments</span>
+                        Pagos
+                    </a>
+</nav>
+</div>
+</div>
+<div class="mt-auto p-4 border-t border-outline-variant/10">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                Nueva Cita
+            </button>
+<div class="mt-6 flex flex-col gap-1">
+<a class="text-slate-500 px-4 py-2 flex items-center gap-3 text-sm hover:text-primary transition-colors" href="administracion_de_perfiles_y_seguridad.html">
+<span class="material-symbols-outlined">settings</span>
+                    Ajustes
+                </a>
+<a class="text-slate-500 px-4 py-2 flex items-center gap-3 text-sm hover:text-error transition-colors" href="index.html">
+<span class="material-symbols-outlined">logout</span>
+                    Cerrar Sesión
+                </a>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="sticky top-0 z-50 glass-nav h-20 w-full flex justify-between items-center px-8 border-b border-outline-variant/5">
+<div class="flex items-center gap-4">
+<span class="md:hidden text-2xl font-extrabold text-primary font-headline">Odontolyt</span>
+<div class="hidden md:flex flex-col">
+<h2 class="text-lg font-bold text-on-surface font-headline leading-none">Mis Citas</h2>
+<p class="text-xs text-outline font-medium">Gestiona tu salud dental</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container px-4 py-2 rounded-full gap-3 w-64 border border-outline-variant/10">
+<span class="material-symbols-outlined text-outline text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-0 w-full text-on-surface" placeholder="Buscar citas..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-outline hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-outline hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="Avatar del paciente" class="w-full h-full object-cover" data-alt="professional headshot of a smiling man in his 30s with short hair in a bright clean setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHHtHe8z66vRW17G5V1uPaj-94eXfVpaA8_pEIX5xGBLnFgi7rzpLhih6qTPe0TRmiAHPbt_P53oM7nBySq5uXCmndI3SdBBw0vp1CBQBIIYTQl3GoCUd0l-HY6p1uciCT9874D0LfzLLt8J_pMsniU18QE65XQJQBQH9f6tJenT7bLGBoXO_fWjiQfivgtY_5Z31DU6XZ4EbbTYfY8hkm7C2FZ-M46M7-HktPzNmnqP2432b6dzSh8ZSYFp1cnc3MLeoj1XROdVw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 max-w-7xl mx-auto w-full flex flex-col gap-12">
+<!-- Featured: Next Appointment (Asymmetric Editorial Style) -->
+<section class="relative">
+<div class="flex flex-col md:flex-row gap-8 items-stretch">
+<!-- The "Hero" Appointment Card -->
+<div class="flex-grow bg-gradient-to-br from-primary to-primary-container text-white rounded-[2rem] p-10 overflow-hidden relative shadow-2xl shadow-primary/30">
+<!-- Abstract texture -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<div>
+<span class="inline-block px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest mb-4">Próxima Cita</span>
+<h3 class="text-4xl font-extrabold font-headline leading-tight">Limpieza Profunda &amp;<br/>Blanqueamiento</h3>
+</div>
+<div class="bg-white/10 backdrop-blur-lg p-4 rounded-2xl text-center min-w-[100px] border border-white/20">
+<p class="text-sm font-medium uppercase opacity-80">Sept</p>
+<p class="text-3xl font-black">24</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-auto">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-xs opacity-70 font-medium">Hora</p>
+<p class="text-lg font-bold">09:30 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a professional female dentist in white medical scrubs with a confident friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8M67FhZvNDExdaDeS-d9BF0-bPkQS1uFO7Q1LwgXgQLDCzcLJqYGVfe2_6xf1Bfd99HxMeGsWEqVZ9G3sSI0C1diRx0j6w0dqZk3cbYhIJJxN5XVwOskMFBWBR75xAb7LZ4rNe3p8fDN57v19oSQz5se10grJHfqKL4vs5oK9TaT2DaN1T9Clf7vy0WYeTwDULSGfflaMaasU9LDYpee-jHQqeJQZirNlqYnXm-SQSbcOZYOCJgcJTkoNlZUTyJI8o5ElrR1gRoU"/>
+</div>
+<div>
+<p class="text-xs opacity-70 font-medium">Especialista</p>
+<p class="text-lg font-bold">Dra. Elena Soler</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/15 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs opacity-70 font-medium">Ubicación</p>
+<p class="text-lg font-bold">Consultorio 402</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Support Info -->
+<div class="md:w-80 flex flex-col gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-[2rem] flex-1 flex flex-col justify-center border border-outline-variant/10 group hover:shadow-xl hover:shadow-primary/5 transition-all">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">info</span>
+<h4 class="font-bold text-lg font-headline mb-2">Preparación</h4>
+<p class="text-sm text-outline leading-relaxed">No olvides traer tu historial radiográfico previo y evitar el consumo de café 2 horas antes.</p>
+<button class="mt-6 text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Ver detalles completos
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Appointment History (Bento Grid Inspired Layout) -->
+<section class="flex flex-col gap-6">
+<div class="flex items-end justify-between px-2">
+<div>
+<h3 class="text-2xl font-extrabold font-headline text-on-surface">Historial de Citas</h3>
+<p class="text-outline font-medium">Resumen de tus visitas anteriores</p>
+</div>
+<div class="flex bg-surface-container p-1 rounded-xl">
+<button class="px-6 py-2 bg-surface-container-lowest rounded-lg text-sm font-bold shadow-sm">Todas</button>
+<button class="px-6 py-2 text-sm font-medium text-outline hover:text-on-surface">Asistidas</button>
+<button class="px-6 py-2 text-sm font-medium text-outline hover:text-on-surface">No Asistidas</button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-[2.5rem] p-8">
+<div class="flex flex-col gap-4">
+<!-- History Item 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6 min-w-[200px]">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex flex-col items-center justify-center text-primary border border-outline-variant/10">
+<span class="text-xs font-bold uppercase opacity-60">Ago</span>
+<span class="text-xl font-black">12</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Revisión Preventiva</h4>
+<p class="text-sm text-outline font-medium">Odontología General</p>
+</div>
+</div>
+<div class="flex items-center gap-4 min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional male dentist in surgical blue scrubs wearing glasses and smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM4TLowsoD_8IWBcH5V0eQ8hUFWhXA0Sqk4q69ujt6Jp8vfacYjNW41b1chvppDLV6Yu_hBFtxYwzMguWi2jU2U8MvFnckw9Nm5dKDrcz1wsWzGOYDbEXAnT6ZI-ZuHwY396r1eEnnAp6ugjIZpF106eEsX2bPnsh0fY0vkFBhwao6veVz7lIRO7mg6BrinBeC4CGpdQi-grp90XyI6qU3FcYlnJjMswuJZAx_looZP1EOVJO2S0p135in30VwjLd2YOusdjwLKwg"/>
+</div>
+<div>
+<p class="text-xs text-outline font-medium leading-none mb-1">Especialista</p>
+<p class="font-bold text-on-surface">Dr. Ricardo Méndez</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="flex flex-col items-end">
+<p class="text-xs text-outline font-medium mb-1">Estado</p>
+<span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Asistida
+                                    </span>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-outline">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6 min-w-[200px]">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex flex-col items-center justify-center text-primary border border-outline-variant/10">
+<span class="text-xs font-bold uppercase opacity-60">Jul</span>
+<span class="text-xl font-black">28</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Tratamiento de Caries</h4>
+<p class="text-sm text-outline font-medium">Odontología Restauradora</p>
+</div>
+</div>
+<div class="flex items-center gap-4 min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional medical doctor woman in clinical setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLUOXlqYfdHFRsS6HuFraLQo6QBOBsHk2uxGCH66jIgn5TwbKrnSqRLy4sYP8nvrZ_makwF1QSQzXCbQ-dyjPX8gKL7_iUoz0It2zyHNwrODT_d5dMAUBXVWwTzNWyLftJ8VywjTYSPSLA5fu2CDvWvTmspEqXHKJLDBquxMrJZoEDZR5_9KAVmZYL52FRR9TPyTEagoWuyidhtdeX4LZDIkTFaVJXdB7QP7LfOhQJrrP55yZyHzQ3Q3DfRrU9q8gcHLhk73y_e08"/>
+</div>
+<div>
+<p class="text-xs text-outline font-medium leading-none mb-1">Especialista</p>
+<p class="font-bold text-on-surface">Dra. Elena Soler</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="flex flex-col items-end">
+<p class="text-xs text-outline font-medium mb-1">Estado</p>
+<span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary/10 text-secondary text-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                        Asistida
+                                    </span>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-outline">
+<span class="material-symbols-outlined">receipt_long</span>
+</button>
+</div>
+</div>
+<!-- History Item 3 (No Asistida) -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl flex flex-wrap items-center justify-between gap-6 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-6 min-w-[200px]">
+<div class="w-16 h-16 bg-surface-container rounded-2xl flex flex-col items-center justify-center text-outline border border-outline-variant/10">
+<span class="text-xs font-bold uppercase opacity-60">May</span>
+<span class="text-xl font-black">15</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface text-lg">Consulta Ortodoncia</h4>
+<p class="text-sm text-outline font-medium">Ortodoncia Invisible</p>
+</div>
+</div>
+<div class="flex items-center gap-4 min-w-[200px]">
+<div class="w-10 h-10 rounded-full bg-surface overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="Doctor male medical professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiGfQPRrDaCW7MoF3KUi0f8i-sh4WvPxziu4EWdOZ2yUAsNgN2u1PaUJgbMUhlC3wdC2hhc_jeV-gOAhSY3T0UsaLAQ2dMEQeCAGgXFPMQ4NDxASHx3Qpzyg6NooiCUXGhHUEmFChHVB_h8foB6A2ijHq4Ut2yj5UPU36fqzXjlDZ7OGZozegpUyrhCczuxMttuqXheQvL4YABa-kfqlePnimwIchx5QNzSltPgBTbTXDuwxp9mwDFJwkYBWCx5PIIpXYl4UPSYpg"/>
+</div>
+<div>
+<p class="text-xs text-outline font-medium leading-none mb-1">Especialista</p>
+<p class="font-bold text-on-surface">Dr. Sergio Valery</p>
+</div>
+</div>
+<div class="flex items-center gap-12">
+<div class="flex flex-col items-end">
+<p class="text-xs text-outline font-medium mb-1">Estado</p>
+<span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-error/10 text-error text-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                        No Asistida
+                                    </span>
+</div>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl hover:bg-surface-container transition-colors text-outline">
+<span class="material-symbols-outlined">error</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-4 border-2 border-dashed border-outline-variant/30 text-outline font-bold hover:border-primary/40 hover:text-primary transition-all rounded-2xl">
+                        Cargar historial anterior
+                    </button>
+</div>
+</section>
+<!-- Bottom Action Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+<div class="bg-secondary/5 p-8 rounded-[2rem] border border-secondary/10 flex items-center gap-6">
+<div class="w-16 h-16 bg-secondary-container rounded-2xl flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl">emergency</span>
+</div>
+<div>
+<h4 class="font-bold text-xl font-headline text-on-secondary-container">¿Necesitas una urgencia?</h4>
+<p class="text-sm text-on-secondary-fixed-variant opacity-80 mb-4">Atención prioritaria disponible 24/7 para nuestros pacientes registrados.</p>
+<button class="px-6 py-2 bg-secondary text-white rounded-full text-sm font-bold">Llamar Ahora</button>
+</div>
+</div>
+<div class="bg-tertiary/5 p-8 rounded-[2rem] border border-tertiary/10 flex items-center gap-6">
+<div class="w-16 h-16 bg-tertiary-fixed rounded-2xl flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-3xl">video_call</span>
+</div>
+<div>
+<h4 class="font-bold text-xl font-headline text-on-tertiary-container">Teleconsulta</h4>
+<p class="text-sm text-on-tertiary-fixed-variant opacity-80 mb-4">Resuelve tus dudas post-tratamiento por videollamada.</p>
+<button class="px-6 py-2 bg-tertiary text-white rounded-full text-sm font-bold">Agendar Virtual</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Mobile Navigation Bar (Authority Source: JSON) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant/10 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="text-[10px] font-bold">Citas</span>
+</a>
+<div class="relative -mt-12">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">clinical_notes</span>
+<span class="text-[10px] font-bold">Salud</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Perfil</span>
+</a>
+</nav>
+</body></html>

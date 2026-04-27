@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Asignar Nueva Cita | Odontolyt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-surface-variant": "#3e484d",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#7bd1fa",
+                      "on-tertiary-fixed": "#001e2b",
+                      "primary-container": "#007bb9",
+                      "on-secondary-fixed": "#00201d",
+                      "inverse-surface": "#2d3133",
+                      "primary-fixed": "#cce5ff",
+                      "on-tertiary-container": "#fbfdff",
+                      "secondary-fixed": "#89f5e7",
+                      "primary": "#006194",
+                      "background": "#f7f9fb",
+                      "surface-dim": "#d8dadc",
+                      "inverse-primary": "#93ccff",
+                      "surface": "#f7f9fb",
+                      "surface-tint": "#006398",
+                      "secondary-container": "#86f2e4",
+                      "on-tertiary-fixed-variant": "#004d66",
+                      "tertiary": "#006483",
+                      "on-secondary-fixed-variant": "#005049",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#0f7ea3",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container-low": "#f2f4f6",
+                      "on-primary-fixed": "#001d31",
+                      "surface-container-high": "#e6e8ea",
+                      "secondary-fixed-dim": "#6bd8cb",
+                      "secondary": "#006a61",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#004b73",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-secondary-container": "#006f66",
+                      "outline": "#6e797e",
+                      "surface-container": "#eceef0",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-fixed": "#c0e8ff",
+                      "primary-fixed-dim": "#93ccff",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#fdfcff",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#bdc8ce",
+                      "on-background": "#191c1e",
+                      "surface-variant": "#e0e3e5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "display": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm shadow-cyan-900/5">
+<div class="flex justify-between items-center h-16 px-8 max-w-[100vw]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold bg-gradient-to-br from-cyan-800 to-cyan-600 bg-clip-text text-transparent font-manrope tracking-tight">Odontolyt</span>
+<div class="hidden md:flex relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl w-64 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" placeholder="Buscar pacientes o citas..." type="text"/>
+</div>
+</div>
+<nav class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full active:scale-95 duration-200">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors p-2 rounded-full active:scale-95 duration-200">settings</span>
+</div>
+<div class="flex items-center gap-3 pl-6 border-l border-slate-200/50">
+<div class="text-right">
+<p class="text-sm font-semibold text-cyan-800 leading-none">Dr. Adrian Lora</p>
+<p class="text-[11px] text-slate-500 uppercase tracking-wider mt-1">Especialista Dental</p>
+</div>
+<img alt="Dentist profile avatar" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="professional portrait of a dentist in a clean clinic environment with clinical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3FY6kdf6Gt-t5HhRqNqMAEySjhl7eQ_K3twgUFoJ1vCQAcuj44PszKID73PKtOsEhIPFP0xQpGW_uq5V_V1nSOAQoD-J1g0c7MKS6R2dGibYEHgFIkABC8uLZ0IICRtfqkMDAyVAK4dXz8zjN_hZk8r7P-UpLQ858OwwNloTUt2QeHtFGEtpxEyNcaihKn45Pae2Ae4jZq0CH_Ob9EqgcZkyFLolwEQxAbaBDXlSQnSe0XOaLjIVG621es9KnpVwWkrAKImFV_Lw"/>
+</div>
+</nav>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#f7f9fb] dark:bg-slate-950 h-screen w-64 border-r-0 z-50">
+    <div class="px-8 mb-10">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dentistry</span>
+            </div>
+            <div>
+                <h1 class="text-2xl font-extrabold text-[#006194] dark:text-cyan-500 font-headline leading-tight">Odontolyt</h1>
+                <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400">Clinical Excellence</p>
+            </div>
+        </div>
+    </div>
+    <nav class="flex-1 flex flex-col font-['Manrope'] font-semibold tracking-tight">
+        <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="panel_de_gestion.html">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span>Dashboard</span>
+        </a>
+        <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="base_de_datos_de_usuario.html">
+            <span class="material-symbols-outlined">person</span>
+            <span>Pacientes</span>
+        </a>
+        <a class="text-[#006194] dark:text-cyan-400 bg-white dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 shadow-sm flex items-center gap-3 transition-all scale-95 active:scale-90" href="asignar_nueva_cita-admin.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+            <span>Agenda</span>
+        </a>
+        <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="servicios.html">
+            <span class="material-symbols-outlined">medical_services</span>
+            <span>Servicios</span>
+        </a>
+        <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="inventario.html">
+            <span class="material-symbols-outlined">inventory_2</span>
+            <span>Inventario</span>
+        </a>
+    </nav>
+    <div class="mt-auto px-4">
+        <button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all mb-8 scale-95 active:scale-90" onclick="window.location.href='asignar_nueva_cita-admin.html'">
+            Nueva Cita
+        </button>
+        <div class="flex flex-col font-['Manrope'] font-semibold tracking-tight">
+            <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="administracion_de_perfiles_y_seguridad.html">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Configuración</span>
+            </a>
+            <a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="index.html">
+                <span class="material-symbols-outlined">logout</span>
+                <span>Cerrar Sesión</span>
+            </a>
+        </div>
+    </div>
+</aside>
+<!-- Main Content -->
+<main class="pl-64 pt-16 min-h-screen">
+<div class="p-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-10">
+<div>
+<nav class="flex items-center gap-2 text-sm text-slate-400 mb-2">
+<span>Agenda</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-medium">Asignar Nueva Cita</span>
+</nav>
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight">Asignar Nueva Cita</h1>
+<p class="text-on-surface-variant mt-2 text-lg">Configura los detalles del paciente y el tratamiento para programar la sesión.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 rounded-xl bg-surface-container-highest text-on-surface font-semibold hover:bg-surface-dim transition-colors">Cancelar</button>
+<button class="px-8 py-3 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold shadow-lg shadow-primary/20 flex items-center gap-2 group transition-transform active:scale-95">
+                        Confirmar Cita
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Step Forms -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Step 1 & 2: Patient & Treatment -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Patient Search -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Paso 1: Paciente</h2>
+</div>
+<div class="relative">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Buscar Paciente</label>
+<input class="w-full bg-surface p-4 rounded-xl border border-outline-variant/30 focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all" placeholder="Nombre o número de historia..." type="text"/>
+<div class="mt-4 space-y-2">
+<div class="flex items-center gap-3 p-3 rounded-xl border border-primary/20 bg-primary/5 cursor-pointer">
+<img alt="Patient" class="w-10 h-10 rounded-full" data-alt="portrait of a smiling woman with clear skin and white teeth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEeWJ5cpde1Hz-fgQV89tBv1EDppdvGw-u819Hyqz7bf9AkGBcmVoO-5NH2cNxdF8xHyZ65BWWiWuE9oJEJZizadQcOUaVSxsYC-OgKIXgztn58GdieM4DApFG_r2V6uCTL_krWHozIM7bBN42GsPXHqQycHKw7bBcJHzEr6o7_1_cDh0SOeb4wauHO6PTxtCcXZF7EqDL5AoGAfr_OLTd24nCfeAYy4Y8SUFWAFZ_55LJEZejyCuWuJ31JHI2eeSx8QjdM4wpwGA"/>
+<div>
+<p class="text-sm font-bold text-cyan-900">Mariana Rodríguez</p>
+<p class="text-[11px] text-slate-500">ID: #4492 - Última visita: Hace 2 meses</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Treatment Selection -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">medical_information</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Paso 2: Servicio</h2>
+</div>
+<div class="space-y-4">
+<label class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Tratamiento</label>
+<div class="relative">
+<select class="w-full bg-surface p-4 rounded-xl border border-outline-variant/30 appearance-none focus:border-secondary focus:ring-4 focus:ring-secondary/5 outline-none transition-all">
+<option>Limpieza Dental Profunda</option>
+<option>Endodoncia Canal Radicular</option>
+<option>Ortodoncia (Control Mensual)</option>
+<option>Implante Dental</option>
+<option>Blanqueamiento Láser</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+<div class="p-4 rounded-xl bg-secondary-container/20 border border-secondary-container/30">
+<p class="text-xs font-semibold text-on-secondary-container">Duración estimada: 45 min</p>
+<p class="text-xs text-on-secondary-container/80 mt-1">Requiere anestesia local suave.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Calendar -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Paso 3: Elegir Fecha</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-bold text-cyan-900">Octubre 2023</span>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4">
+<!-- Weekdays -->
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Lun</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Mar</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Mié</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Jue</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Vie</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Sáb</div>
+<div class="text-center text-[11px] font-bold text-slate-400 uppercase tracking-widest py-2">Dom</div>
+<!-- Calendar Days (Mockup) -->
+<div class="aspect-square flex items-center justify-center text-slate-300">25</div>
+<div class="aspect-square flex items-center justify-center text-slate-300">26</div>
+<div class="aspect-square flex items-center justify-center text-slate-300">27</div>
+<div class="aspect-square flex items-center justify-center text-slate-300">28</div>
+<div class="aspect-square flex items-center justify-center text-slate-300">29</div>
+<div class="aspect-square flex items-center justify-center text-slate-300">30</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">1</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">2</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">3</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">4</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">5</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">6</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">7</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">8</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">9</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">10</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">11</div>
+<div class="aspect-square flex items-center justify-center bg-primary text-on-primary font-bold rounded-xl shadow-lg shadow-primary/30 relative">
+                                12
+                                <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">13</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">14</div>
+<div class="aspect-square flex items-center justify-center text-cyan-900 font-medium hover:bg-surface-container-low rounded-xl cursor-pointer">15</div>
+</div>
+</div>
+<!-- Step 4: Time Slots -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Paso 4: Seleccionar Horario</h2>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3">
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">08:00 AM</p>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">08:45 AM</p>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 bg-slate-100 text-slate-300 text-center cursor-not-allowed opacity-50">
+<p class="text-sm font-bold">09:30 AM</p>
+</div>
+<div class="p-4 rounded-xl border-2 border-primary bg-primary/5 text-center cursor-pointer relative">
+<p class="text-sm font-bold text-primary">10:15 AM</p>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-[8px] px-2 py-0.5 rounded-full font-bold uppercase">Libre</span>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">11:00 AM</p>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">11:45 AM</p>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">02:00 PM</p>
+</div>
+<div class="p-4 rounded-xl border border-outline-variant/30 text-center cursor-pointer hover:border-primary transition-all">
+<p class="text-sm font-bold text-cyan-900">02:45 PM</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary Card -->
+<div class="col-span-12 lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<!-- Summary Card -->
+<div class="bg-gradient-to-br from-cyan-900 to-cyan-800 rounded-[2rem] p-8 text-white shadow-2xl shadow-cyan-900/20 overflow-hidden relative">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-400/10 rounded-full blur-3xl"></div>
+<h3 class="text-2xl font-bold font-manrope mb-8 relative">Resumen de Cita</h3>
+<div class="space-y-6 relative">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest text-cyan-300 font-bold">Paciente</p>
+<p class="text-lg font-semibold">Mariana Rodríguez</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">dentistry</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest text-cyan-300 font-bold">Tratamiento</p>
+<p class="text-lg font-semibold">Limpieza Dental Profunda</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-2 bg-white/10 rounded-lg">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="text-xs uppercase tracking-widest text-cyan-300 font-bold">Fecha y Hora</p>
+<p class="text-lg font-semibold">12 de Octubre, 2023</p>
+<p class="text-cyan-200">10:15 AM (45 min)</p>
+</div>
+</div>
+<div class="pt-6 border-t border-white/10 flex justify-between items-end">
+<div>
+<p class="text-xs uppercase tracking-widest text-cyan-300 font-bold">Consultorio</p>
+<p class="font-semibold">Sala A - Piso 2</p>
+</div>
+<div class="text-right">
+<p class="text-xs uppercase tracking-widest text-cyan-300 font-bold">Honorarios</p>
+<p class="text-2xl font-bold">$120.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toggle -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/10 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="text-sm font-semibold">Enviar Recordatorio</span>
+</div>
+<div class="w-12 h-6 bg-secondary/20 rounded-full p-1 relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-secondary rounded-full"></div>
+</div>
+</div>
+<p class="text-[11px] text-slate-500 mt-2">Se enviará un correo y un SMS al paciente 24h antes.</p>
+</div>
+<!-- Peace of Mind Progress -->
+<div class="bg-white/50 backdrop-blur-md p-6 rounded-2xl border border-outline-variant/10">
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">Progreso del Plan</p>
+<div class="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-container w-3/4"></div>
+</div>
+<p class="text-[11px] text-secondary font-bold mt-2">Paso 3 de 4: Programación</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Spacing -->
+<div class="h-20"></div>
+</div>
+</main>
+</body></html>

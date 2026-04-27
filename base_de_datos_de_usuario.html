@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Odontolyt | Directorio de Pacientes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#006194",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed-variant": "#004b73",
+                        "primary-container": "#007bb9",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary": "#006483",
+                        "outline": "#6e797e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#86f2e4",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-fixed": "#c0e8ff",
+                        "on-tertiary-fixed": "#001e2b",
+                        "on-secondary-fixed": "#00201d",
+                        "on-background": "#191c1e",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#3e484d",
+                        "tertiary-container": "#0f7ea3",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2d3133",
+                        "secondary": "#006a61",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bdc8ce",
+                        "on-tertiary-fixed-variant": "#004d66",
+                        "on-primary-fixed": "#001d31",
+                        "on-primary-container": "#fdfcff",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed": "#89f5e7",
+                        "primary-fixed": "#cce5ff",
+                        "primary-fixed-dim": "#93ccff",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#006f66",
+                        "on-secondary-fixed-variant": "#005049",
+                        "surface": "#f7f9fb",
+                        "inverse-primary": "#93ccff",
+                        "on-tertiary-container": "#fbfdff",
+                        "surface-tint": "#006398",
+                        "tertiary-fixed-dim": "#7bd1fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/10 bg-slate-50 dark:bg-slate-950 flex flex-col p-4 gap-2 z-[60]">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="dentistry" style="font-variation-settings: 'FILL' 1;">dentistry</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-cyan-800 dark:text-cyan-200 font-manrope leading-tight">Odontolyt</h2>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Clinical Excellence</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col font-['Manrope'] font-semibold tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="panel_de_gestion.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-[#006194] dark:text-cyan-400 bg-white dark:bg-slate-800 rounded-l-full ml-4 pl-4 py-3 shadow-sm flex items-center gap-3 transition-all scale-95 active:scale-90" href="base_de_datos_de_usuario.html">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Pacientes</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="asignar_nueva_cita-admin.html">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Agenda</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="servicios.html">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span>Servicios</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="inventario.html">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventario</span>
+</a>
+</nav>
+<div class="mt-auto px-4">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl font-bold shadow-md hover:shadow-lg transition-all mb-8 scale-95 active:scale-90">
+                Nueva Cita
+            </button>
+<div class="flex flex-col font-['Manrope'] font-semibold tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="administracion_de_perfiles_y_seguridad.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuración</span>
+</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#006194] dark:hover:text-cyan-300 px-8 py-3 transition-all flex items-center gap-3 hover:bg-[#ffffff10]" href="index.html">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Cerrar Sesión</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Wrapper -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Anchor -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-8 py-3 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tighter text-cyan-900 dark:text-cyan-100 font-manrope">Odontolyt</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors font-manrope" href="#">Dashboard</a>
+<a class="text-cyan-800 dark:text-cyan-300 border-b-2 border-cyan-600 pb-1 font-manrope font-semibold tracking-tight" href="#">Patients</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors font-manrope" href="#">Schedule</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-cyan-700 transition-colors font-manrope" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400">
+<span class="material-symbols-outlined text-[20px]" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search records..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-100/50 rounded-lg transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100/50 rounded-lg transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<img alt="Clinic Administrator Profile" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="professional portrait of a female clinic administrator in a modern medical setting, soft lighting, serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACHgJy9OQ4RNoTJoFEoZ7Y3mGKX8eqGu3xPYRpnnokIGq2RJC5YpEGGzyzo64qlJBMmzKWILDXoX7bS2jJiDILyn0uumWfyd0R6V1XZjBzlJ22QYS4lNDmTGdLrxnT3osCbNJQsJPluiongAxjF_KmSI3P9GWq4GOTOiIT0IJVGYiBXOZbNx0tX_e9KUlMqVEJmG2zBaljZ77Rvh6f3WkZVN8QSDSzGSmj7o0e9P7194719qJttNc4IuirwTk_FQRj0ciMhr8m5CQ"/>
+</div>
+</header>
+<!-- Content Canvas -->
+<section class="p-8 flex-1 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<!-- Page Header Editorial Style -->
+<div class="mb-12">
+<h2 class="text-4xl font-extrabold font-manrope text-on-surface tracking-tight mb-2">Directorio de Pacientes</h2>
+<p class="text-slate-500 font-medium text-lg">Gestionando 1,248 perfiles clínicos registrados</p>
+</div>
+<!-- Table Container with Asymmetry / Editorial Layout -->
+<div class="bg-surface-container-lowest rounded-[2rem] shadow-sm overflow-hidden p-2">
+<!-- Table Header / Actions -->
+<div class="flex justify-between items-center p-6 bg-white rounded-t-[1.8rem]">
+<div class="flex gap-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-4 flex items-center text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[22px]" data-icon="filter_list">filter_list</span>
+</span>
+<select class="appearance-none bg-surface-container-low border-none rounded-2xl py-3 pl-12 pr-10 text-sm font-semibold text-primary focus:ring-2 focus:ring-primary/20">
+<option>Filter by Status</option>
+<option>Active Patients</option>
+<option>Archived</option>
+</select>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-white px-8 py-3 rounded-2xl font-bold font-manrope flex items-center gap-2 transition-all transform active:scale-95 shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                            Add New User
+                        </button>
+</div>
+<!-- Modern Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full border-separate border-spacing-y-4 px-6">
+<thead>
+<tr class="text-left text-slate-400 text-[11px] uppercase tracking-[0.2em] font-bold">
+<th class="px-4 py-2">Name &amp; Identity</th>
+<th class="px-4 py-2">Contact Details</th>
+<th class="px-4 py-2">Date Registered</th>
+<th class="px-4 py-2">Last Appointment</th>
+<th class="px-4 py-2">Status</th>
+<th class="px-4 py-2 text-right">Actions</th>
+</tr>
+</thead>
+<tbody>
+<!-- Row 1 -->
+<tr class="group hover:bg-slate-50 transition-colors cursor-pointer" onclick="window.location.href='historial_clinico_digital.html'">
+<td class="px-4 py-5 first:rounded-l-2xl">
+<div class="flex items-center gap-4">
+<img alt="Patient Avatar" class="w-12 h-12 rounded-2xl object-cover shadow-sm" data-alt="close up headshot of a middle aged woman with a kind smile, bright neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU-8qKNbMHWMZqK6-JElhoqHKY3DDRGaJVA46YgwXcKgsXzbfircMwycsKpXQtLJAj1E25CHu9dt8G8KmsKlAeE4MCQWH8ZEuldjaGEkef-PkPWS6VSq-isQudIgqyljjWPI44mg_59itGgCHWyC59NJpeB0n5MDZoggfpsV6Rtj4liTwmya37_AfvZWt8x4IxfMEhXZQKEzGE3NY8vaQyaamir4HcjbC7XeOZdhQz11NoiOyCxlkwJ0wWnumY5UbWiKCPiyHHQo4"/>
+<div>
+<div class="font-bold text-on-surface font-manrope">Dr. Eleanor Thorne</div>
+<div class="text-xs text-slate-400">ID: #45920-A</div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium text-slate-600">eleanor.thorne@healthcare.com</td>
+<td class="px-4 py-5 text-sm text-slate-500">Oct 12, 2023</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2 text-sm text-cyan-700 font-semibold">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+                                            Mar 14, 2024
+                                        </div>
+</td>
+<td class="px-4 py-5">
+<span class="px-4 py-1.5 bg-secondary-container/30 text-on-secondary-container text-xs font-bold rounded-full border border-secondary-container/50">Active</span>
+</td>
+<td class="px-4 py-5 last:rounded-r-2xl text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-slate-50 transition-colors">
+<td class="px-4 py-5">
+<div class="flex items-center gap-4">
+<img alt="Patient Avatar" class="w-12 h-12 rounded-2xl object-cover shadow-sm" data-alt="portrait of a young man with glasses, professional lighting, corporate yet friendly style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSWhZTWgf0PmfWXdQ2s4EUKAVAYLNltVIvVbxEjdH3_2BJiRPeEqCUzY4EpHTOOUSid-7FbieMBpZ2KFMbq5sC6Yt7UZ-bnedO_gyrnmRXdFvaTDqIGhFBHnQmI3Z0KOFVHdOAaLpj0q8kIFIRv5OiquutNmbshD1EVAwJAm31TxitqrxsakRzrSxlDE5JuDJNV_h9k2wb6NCeDSKSxnPiekxMQwax2zlL8NeaUeSaDksuOa0VZfx2c-st1ApfesmG5gx8L8rwU8w"/>
+<div>
+<div class="font-bold text-on-surface font-manrope">Marcus Richardson</div>
+<div class="text-xs text-slate-400">ID: #33102-B</div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium text-slate-600">m.richardson@studio.io</td>
+<td class="px-4 py-5 text-sm text-slate-500">Jan 05, 2024</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2 text-sm text-cyan-700 font-semibold">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+                                            Apr 01, 2024
+                                        </div>
+</td>
+<td class="px-4 py-5">
+<span class="px-4 py-1.5 bg-surface-container-high text-slate-500 text-xs font-bold rounded-full border border-slate-300/30">Inactive</span>
+</td>
+<td class="px-4 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-slate-50 transition-colors">
+<td class="px-4 py-5">
+<div class="flex items-center gap-4">
+<img alt="Patient Avatar" class="w-12 h-12 rounded-2xl object-cover shadow-sm" data-alt="candid lifestyle portrait of a happy smiling woman in her 30s, natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsfe7FgV4u35UbTNURSs2Xdri12m02yrtNIhiEM9ZsFe8lnvH8gJ_WWLrEQd8El08m0u_en-PQWgsI9VIGd-RQjhCOwHRkToQs6M53Pir19NboLh2Ga8Voibs8F45_6-UoKbkegJNRvZxi61Vp2PqFnJzY41SqlWAWQFbhpGiufiJDwBe7p-2OZoib2CwX5hxvKYQe43xUKcK2iYl2jA8tdxrjp52vfYgK3ial8nzXSDv4HgZgLL2gAH-iH_OvASgIAAwdcP9PzSA"/>
+<div>
+<div class="font-bold text-on-surface font-manrope">Sofia Valentini</div>
+<div class="text-xs text-slate-400">ID: #88291-C</div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium text-slate-600">valentini.s@design.it</td>
+<td class="px-4 py-5 text-sm text-slate-500">Dec 20, 2023</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2 text-sm text-cyan-700 font-semibold">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+                                            May 12, 2024
+                                        </div>
+</td>
+<td class="px-4 py-5">
+<span class="px-4 py-1.5 bg-secondary-container/30 text-on-secondary-container text-xs font-bold rounded-full border border-secondary-container/50">Active</span>
+</td>
+<td class="px-4 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-slate-50 transition-colors">
+<td class="px-4 py-5">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-2xl bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-lg">BH</div>
+<div>
+<div class="font-bold text-on-surface font-manrope">Benjamin Hughes</div>
+<div class="text-xs text-slate-400">ID: #11054-D</div>
+</div>
+</div>
+</td>
+<td class="px-4 py-5 text-sm font-medium text-slate-600">ben.hughes@techcorp.com</td>
+<td class="px-4 py-5 text-sm text-slate-500">Feb 18, 2024</td>
+<td class="px-4 py-5">
+<div class="flex items-center gap-2 text-sm text-slate-400 italic">
+<span class="material-symbols-outlined text-[18px]" data-icon="event_busy">event_busy</span>
+                                            No recent activity
+                                        </div>
+</td>
+<td class="px-4 py-5">
+<span class="px-4 py-1.5 bg-secondary-container/30 text-on-secondary-container text-xs font-bold rounded-full border border-secondary-container/50">Active</span>
+</td>
+<td class="px-4 py-5 text-right">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="p-8 flex justify-between items-center border-t border-slate-50">
+<div class="text-sm text-slate-400 font-medium">Showing <span class="text-on-surface font-bold">1 - 10</span> of 1,248 patients</div>
+<div class="flex gap-2">
+<button class="p-3 bg-white hover:bg-slate-50 text-slate-400 rounded-xl transition-all border border-slate-100/50">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="px-5 py-3 bg-primary text-white font-bold rounded-xl transition-all shadow-md shadow-primary/20">1</button>
+<button class="px-5 py-3 bg-white hover:bg-slate-50 text-slate-600 font-bold rounded-xl transition-all border border-slate-100/50">2</button>
+<button class="px-5 py-3 bg-white hover:bg-slate-50 text-slate-600 font-bold rounded-xl transition-all border border-slate-100/50">3</button>
+<button class="p-3 bg-white hover:bg-slate-50 text-slate-400 rounded-xl transition-all border border-slate-100/50">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Bento Insight Section -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-primary/5 rounded-[2rem] p-8 border border-primary/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="group_add" style="font-variation-settings: 'FILL' 1;">group_add</span>
+<span class="text-secondary font-bold text-xs">+12% vs LY</span>
+</div>
+<h3 class="text-3xl font-black text-on-surface font-manrope">84</h3>
+<p class="text-slate-500 font-medium">New registrations this month</p>
+</div>
+<div class="bg-secondary/5 rounded-[2rem] p-8 border border-secondary/10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-primary font-bold text-xs">High Trust</span>
+</div>
+<h3 class="text-3xl font-black text-on-surface font-manrope">98.2%</h3>
+<p class="text-slate-500 font-medium">Patient retention rate</p>
+</div>
+<div class="bg-white rounded-[2rem] p-8 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10">
+<div class="mb-4">
+<span class="material-symbols-outlined text-cyan-600 text-3xl" data-icon="insights">insights</span>
+</div>
+<h3 class="text-xl font-bold text-cyan-900 font-manrope mb-2">Growth Analytics</h3>
+<p class="text-slate-500 text-sm leading-relaxed mb-4">View detailed reports on patient demographics and clinical service trends.</p>
+<button class="text-cyan-700 font-bold text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Open Dashboard
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

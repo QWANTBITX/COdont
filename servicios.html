@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Servicios | Odontolyt</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#006483",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001d31",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-surface": "#191c1e",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#89f5e7",
+                    "primary": "#006194",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "tertiary-container": "#007bb9",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "outline": "#6e797e",
+                    "on-surface-variant": "#3e484d",
+                    "primary-fixed": "#cce5ff",
+                    "on-secondary-container": "#006f66",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary": "#006a61",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "outline-variant": "#bdc8ce",
+                    "on-tertiary-fixed-variant": "#004d66",
+                    "surface-bright": "#f7f9fb",
+                    "surface-tint": "#006398",
+                    "inverse-surface": "#2d3133",
+                    "primary-container": "#007bb9",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#004b73",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#c0e8ff",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#86f2e4",
+                    "on-secondary-fixed": "#00201d",
+                    "on-tertiary-container": "#fbfdff",
+                    "on-secondary-fixed-variant": "#005049",
+                    "on-tertiary-fixed": "#001e2b",
+                    "on-primary-container": "#fdfcff",
+                    "primary-fixed-dim": "#93ccff",
+                    "tertiary-fixed-dim": "#7bd1fa",
+                    "inverse-primary": "#93ccff",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #006194 0%, #007bb9 100%);
+        }
+        .peace-of-mind-track {
+            background: linear-gradient(90deg, #006a61 0%, #86f2e4 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Barra de Navegación Superior -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
+<div class="text-2xl font-bold tracking-tighter text-cyan-900 font-headline">
+            Odontolyt
+        </div>
+<div class="hidden md:flex items-center gap-10 font-headline tracking-tight font-medium">
+<a class="text-cyan-700 border-b-2 border-cyan-600 pb-1" href="servicios.html">Servicios</a>
+<a class="text-slate-600 hover:text-cyan-800 transition-opacity duration-300" href="sobre_nosotros.html">Nosotros</a>
+<a class="text-slate-600 hover:text-cyan-800 transition-opacity duration-300" href="sobre_nosotros.html">Equipo</a>
+<a class="text-slate-600 hover:text-cyan-800 transition-opacity duration-300" href="contacto.html">Contacto</a>
+</div>
+<a href="inicio_de_sesion.html" class="hero-gradient text-on-primary px-8 py-3 rounded-full font-headline font-semibold text-sm hover:opacity-90 transition-all active:scale-95">
+            Iniciar Sesión
+        </a>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Sección Hero -->
+<header class="max-w-7xl mx-auto px-8 mb-20 text-center md:text-left">
+<div class="grid md:grid-cols-2 gap-12 items-end">
+<div>
+<span class="text-primary font-headline font-bold tracking-widest uppercase text-xs mb-4 block">Nuestra Excelencia</span>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-on-surface leading-[1.1] tracking-tight mb-8">
+                    El Arte de la <br/><span class="text-secondary">Serenidad Clínica</span>
+</h1>
+</div>
+<div class="pb-4">
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                    Hemos reinventado el cuidado dental como un viaje de bienestar. Descubra un conjunto de servicios diseñados con precisión, guiados por la empatía y entregados en una atmósfera de absoluta calma.
+                </p>
+</div>
+</div>
+</header>
+<!-- Cuadrícula Bento de Servicios -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Odontología Estética - Característica Grande -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-[2rem] overflow-hidden group shadow-sm hover:shadow-xl transition-shadow duration-500">
+<div class="grid md:grid-cols-2 h-full">
+<div class="p-12 flex flex-col justify-between">
+<div>
+<div class="w-14 h-14 bg-secondary-container text-on-secondary-container rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl">auto_fix_high</span>
+</div>
+<h3 class="text-3xl font-headline font-bold mb-4">Odontología Estética</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                                Diseñamos sonrisas armoniosas mediante carillas de porcelana, blanqueamiento profesional y rehabilitación oral completa. Fusionamos arte con biología para resultados naturales y perfectos.
+                            </p>
+</div>
+<div>
+<button class="group/btn flex items-center gap-3 text-primary font-semibold font-headline">
+                                Saber Más 
+                                <span class="material-symbols-outlined group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative min-h-[300px]">
+<img alt="Estética dental moderna" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up of a perfectly natural white smile in soft warm morning light, emphasizing health and high-end aesthetic dental work" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQF7ts6822J5RU6ocTa6T-TBSTjSnm5SnmI2VQmUVtAs_czoeZGfChBKol1unFVkrz_U6c-HF9VyUtj4SbAmjbypzNJQQpIRhr4vb2Zo3gwz3YGtRIphZwKZXYH6-qrTTSuQ4ioTPcC6rteq6_shJnNK5TZrV3odYsEZVfY78ae0k5Q98alXJohLYt1-jqh38DWLCguT9uMuOSlVPnkVMw1l6oQe8IEAw0Gr2Nw10H-DywzbMFor3ull0Hw1UBsa5d2MF_8SqaXKA"/>
+</div>
+</div>
+</div>
+<!-- Cuidado Preventivo -->
+<div class="md:col-span-4 bg-surface-container-low rounded-[2rem] p-12 flex flex-col justify-between group">
+<div>
+<div class="w-14 h-14 bg-primary-fixed text-on-primary-fixed rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl">shield_with_heart</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Cuidado Preventivo</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">
+                        Diagnósticos avanzados y limpiezas biocompatibles para proteger su salud sistémica antes de que surjan problemas.
+                    </p>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Pruebas de Bio-ADN
+                    </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Terapia de Biofilm Guiada
+                    </li>
+</ul>
+<button class="bg-surface-container-highest text-on-surface px-6 py-3 rounded-xl font-headline font-semibold text-sm self-start group-hover:bg-primary-fixed transition-colors">
+                    Explorar Bienestar
+                </button>
+</div>
+<!-- Odontopediatría -->
+<div class="md:col-span-4 bg-surface-container-low rounded-[2rem] p-12 flex flex-col justify-between overflow-hidden relative">
+<div class="z-10">
+<div class="w-14 h-14 bg-tertiary-fixed text-on-tertiary-fixed rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Odontopediatría</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Creando recuerdos positivos para nuestros pacientes más jóvenes. Una introducción suave y sin ansiedad a la salud dental de por vida.
+                    </p>
+</div>
+<div class="mt-8 z-10">
+<button class="text-primary font-semibold font-headline flex items-center gap-2">
+                        Ver Programa Infantil <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Excelencia Restaurativa -->
+<div class="md:col-span-8 bg-surface-container-low rounded-[2rem] p-1 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]">
+<div class="bg-surface-container-lowest rounded-[1.8rem] p-12 h-full flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2 flex flex-col justify-center">
+<h3 class="text-3xl font-headline font-bold mb-6">Excelencia Restaurativa</h3>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            Desde implantes guiados por láser hasta restauraciones libres de metal, utilizamos materiales de vanguardia que imitan las propiedades mecánicas y visuales de los dientes naturales.
+                        </p>
+<div class="p-6 bg-surface-container-low rounded-2xl">
+<p class="text-sm font-medium mb-3 opacity-60">Seguimiento del Progreso del Tratamiento</p>
+<div class="w-full h-3 bg-surface-variant rounded-full overflow-hidden">
+<div class="peace-of-mind-track h-full w-[75%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold uppercase tracking-wider text-secondary">
+<span>Consulta</span>
+<span>Procedimiento</span>
+<span>Radiancia</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 grid grid-cols-1 gap-4">
+<div class="p-6 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary mb-2">biotech</span>
+<h4 class="font-bold mb-1">Imagen Digital 3D</h4>
+<p class="text-sm text-on-surface-variant">Escaneo sin radiación para una planificación precisa.</p>
+</div>
+<div class="p-6 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary mb-2">ink_eraser</span>
+<h4 class="font-bold mb-1">Periodoncia Láser</h4>
+<p class="text-sm text-on-surface-variant">Regeneración de tejido gingival sin puntos y sin dolor.</p>
+</div>
+<div class="p-6 rounded-2xl hover:bg-surface-container-low transition-colors group">
+<span class="material-symbols-outlined text-primary mb-2">sleep</span>
+<h4 class="font-bold mb-1">Bienestar por Sedación</h4>
+<p class="text-sm text-on-surface-variant">Transcurra su cita en total tranquilidad.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mt-24">
+<div class="bg-primary-container text-on-primary-container rounded-[3rem] p-16 relative overflow-hidden">
+<div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-4xl font-headline font-extrabold mb-6 leading-tight">Su Viaje Hacia la Radiancia Comienza Aquí.</h2>
+<p class="text-primary-fixed/80 text-lg mb-10 max-w-md">
+                        Experimente un cuidado dental que respeta su tiempo, su comodidad y su biología. Nuestro equipo de atención personalizada está listo para recibirlo.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-surface-container-lowest text-primary px-8 py-4 rounded-full font-headline font-bold hover:scale-105 transition-transform shadow-lg">
+                            Reservar Ahora
+                        </button>
+<button class="border border-primary-fixed/30 text-on-primary-container px-8 py-4 rounded-full font-headline font-bold hover:bg-on-primary-container hover:text-primary transition-colors">
+                            Ver Precios
+                        </button>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/5">
+<span class="text-3xl font-headline font-extrabold block mb-1">15k+</span>
+<span class="text-xs uppercase tracking-widest font-bold opacity-70">Sonrisas Restauradas</span>
+</div>
+<div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/5 mt-8">
+<span class="text-3xl font-headline font-extrabold block mb-1">4.9/5</span>
+<span class="text-xs uppercase tracking-widest font-bold opacity-70">Calificación de Pacientes</span>
+</div>
+</div>
+<div class="pt-12 space-y-4">
+<div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/5">
+<span class="text-3xl font-headline font-extrabold block mb-1">20+</span>
+<span class="text-xs uppercase tracking-widest font-bold opacity-70">Especialistas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full -ml-20 -mb-20 blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[2rem] bg-slate-100 mt-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-16">
+<div class="space-y-6">
+<div class="text-lg font-bold text-cyan-800 font-headline">Odontolyt</div>
+<p class="font-inter text-sm leading-relaxed text-slate-500">
+                Redefiniendo la excelencia clínica a través de experiencias serenas para el paciente y odontología biomimética avanzada.
+            </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-cyan-800 cursor-pointer">public</span>
+<span class="material-symbols-outlined text-cyan-800 cursor-pointer">chat_bubble</span>
+<span class="material-symbols-outlined text-cyan-800 cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-cyan-900 text-sm uppercase tracking-widest">Navegación</h4>
+<nav class="flex flex-col gap-3 font-inter text-sm">
+<a class="text-cyan-700 font-semibold" href="servicios.html">Servicios</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="sobre_nosotros.html">Nuestro Equipo</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="sobre_nosotros.html">Nosotros</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="contacto.html">Contacto</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-cyan-900 text-sm uppercase tracking-widest">Pacientes</h4>
+<nav class="flex flex-col gap-3 font-inter text-sm">
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="inicio_de_sesion.html">Portal del Paciente</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="#">Urgencias</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="#">Formulario de Nuevo Paciente</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="#">Seguros</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h4 class="font-headline font-bold text-cyan-900 text-sm uppercase tracking-widest">Legal</h4>
+<nav class="flex flex-col gap-3 font-inter text-sm">
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="#">Política de Privacidad</a>
+<a class="text-slate-500 hover:text-cyan-600 transition-colors" href="#">Términos de Servicio</a>
+</nav>
+<div class="mt-8 pt-8 border-t border-slate-200">
+<p class="font-inter text-[10px] text-slate-400">© 2024 Odontolyt Care. Serenidad Clínica Definida.</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
