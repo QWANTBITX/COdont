@@ -1,0 +1,25 @@
+Revisando las rutas y controladores para listar las APIs usadas en el backend.
+
+APIs usadas en el backend
+Rutas públicas /api/auth
+POST /api/auth/register — registro de usuario
+POST /api/auth/login — inicio de sesión
+POST /api/auth/logout — cerrar sesión
+POST /api/auth/forgot-password — solicitud de recuperación de contraseña
+POST /api/auth/reset-password — restablecer contraseña
+Rutas protegidas /api
+GET /api/profile — obtener perfil del usuario autenticado
+GET /api/appointments — obtener citas del paciente autenticado
+POST /api/appointments — crear nueva cita para el paciente
+GET /api/dentist/appointments — obtener citas del odontólogo (requiere rol dentist)
+PUT /api/appointments/:appointmentId — actualizar cita (estado/notas)
+GET /api/clinical-records — obtener registros clínicos del paciente autenticado
+Rutas de administrador /api/admin
+GET /api/admin/users — listar usuarios (filtro por role opcional)
+GET /api/admin/users/:userId — obtener datos de un usuario
+PUT /api/admin/users/:userId — actualizar rol/estado de usuario
+DELETE /api/admin/users/:userId — eliminar usuario
+Seguridad usada
+middleware authMiddleware para rutas protegidas
+requireRole('dentist') para GET /api/dentist/appointments
+requireRole('admin') para rutas /api/admin/*
