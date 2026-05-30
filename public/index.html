@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Odontológico - Gestión Clínica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .btn-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .btn-gradient:hover { background: linear-gradient(135deg, #5568d3 0%, #6a3d8e 100%); }
+        .fade-in { animation: fadeIn 0.3s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .slide-in { animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .input-focus:focus { @apply ring-2 ring-blue-500 ring-offset-2; }
+        .loading { @apply opacity-50 pointer-events-none; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    <div id="app"></div>
+
+    <!-- Página de Login/Registro -->
+    <div id="auth-page" class="min-h-screen flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <!-- Logo y Cabecera -->
+            <div class="text-center mb-8">
+                <div class="inline-block p-3 rounded-lg btn-gradient mb-4">
+                    <i class="fas fa-tooth text-white text-3xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-900">Consultorio</h1>
+                <p class="text-gray-600 mt-2">Gestión Clínica Odontológica</p>
+            </div>
+
+            <!-- Selector de Tabs -->
+            <div class="flex gap-2 mb-6 bg-gray-200 p-1 rounded-lg">
+                <button id="login-tab" class="flex-1 py-2 rounded font-semibold btn-gradient text-white transition">
+                    Iniciar Sesión
+                </button>
+                <button id="register-tab" class="flex-1 py-2 rounded font-semibold text-gray-700 bg-white transition hover:bg-gray-100">
+                    Registrarse
+                </button>
+            </div>
+
+            <!-- Formulario de Login -->
+            <form id="login-form" class="bg-white rounded-lg shadow-lg p-6 space-y-4 fade-in">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" name="email" placeholder="tu@gmail.com" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Contraseña</label>
+                    <input type="password" name="password" placeholder="••••••••" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                </div>
+
+                <button type="submit" class="w-full py-2 btn-gradient text-white font-semibold rounded-lg hover:shadow-lg transition">
+                    Iniciar Sesión
+                </button>
+
+                <div class="text-center">
+                    <button type="button" id="forgot-password-btn" class="text-sm text-blue-600 hover:underline">
+                        ¿Olvidaste tu contraseña?
+                    </button>
+                </div>
+
+                <div id="login-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"></div>
+            </form>
+
+            <!-- Formulario de Registro -->
+            <form id="register-form" class="hidden bg-white rounded-lg shadow-lg p-6 space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Nombre Completo</label>
+                    <input type="text" name="fullName" placeholder="Juan Pérez" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Gmail</label>
+                    <input type="email" name="email" placeholder="tu@gmail.com" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                    <p class="text-xs text-gray-600 mt-1">⚠️ Solo emails de Gmail (@gmail.com)</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Teléfono (opcional)</label>
+                    <input type="tel" name="phone" placeholder="+34 123 456 789" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Contraseña</label>
+                    <input type="password" name="password" placeholder="••••••••" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                    <ul class="text-xs text-gray-600 mt-2 space-y-1">
+                        <li id="req-length">❌ Mínimo 7 caracteres</li>
+                        <li id="req-letter">❌ Debe contener letras</li>
+                        <li id="req-number">❌ Debe contener números</li>
+                        <li id="req-special">❌ Debe incluir #, $, %, &</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Repetir Contraseña</label>
+                    <input type="password" name="confirmPassword" placeholder="••••••••" 
+                        class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                </div>
+
+                <button type="submit" class="w-full py-2 btn-gradient text-white font-semibold rounded-lg hover:shadow-lg transition">
+                    Crear Cuenta
+                </button>
+
+                <div id="register-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"></div>
+            </form>
+
+            <!-- Modal de Recuperación de Contraseña -->
+            <div id="forgot-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+                <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Recuperar Contraseña</h3>
+                    <form id="forgot-form" class="space-y-4">
+                        <p class="text-gray-600 text-sm">Te enviaremos un enlace de recuperación a tu email.</p>
+                        <input type="email" name="email" placeholder="tu@gmail.com" 
+                            class="input-focus w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none transition" required>
+                        <div class="flex gap-3">
+                            <button type="submit" class="flex-1 py-2 btn-gradient text-white font-semibold rounded-lg hover:shadow-lg transition">
+                                Enviar
+                            </button>
+                            <button type="button" class="flex-1 py-2 bg-gray-200 text-gray-900 font-semibold rounded-lg hover:bg-gray-300 transition"
+                                onclick="document.getElementById('forgot-modal').classList.add('hidden')">
+                                Cancelar
+                            </button>
+                        </div>
+                        <div id="forgot-status" class="text-center text-sm"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Principal (Dashboard) -->
+    <div id="dashboard-page" class="hidden min-h-screen">
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 rounded-lg btn-gradient">
+                        <i class="fas fa-tooth text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">Consultorio</h1>
+                        <p class="text-xs text-gray-600">Gestión Clínica</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div id="user-info" class="text-right">
+                        <p id="user-name" class="font-semibold text-gray-900"></p>
+                        <p id="user-role" class="text-xs text-gray-600"></p>
+                    </div>
+                    <button id="logout-btn" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
+                        Cerrar Sesión
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Panel del Paciente -->
+            <div id="patient-panel" class="hidden space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Mis Citas</h2>
+                <div id="patient-appointments" class="grid gap-4">
+                    <!-- Se llenará con JS -->
+                </div>
+
+                <h2 class="text-3xl font-bold text-gray-900 mt-8">Mi Historial Clínico</h2>
+                <div id="patient-records" class="grid gap-4">
+                    <!-- Se llenará con JS -->
+                </div>
+            </div>
+
+            <!-- Panel del Odontólogo -->
+            <div id="dentist-panel" class="hidden space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Mis Citas Programadas</h2>
+                <div id="dentist-appointments" class="grid gap-4">
+                    <!-- Se llenará con JS -->
+                </div>
+            </div>
+
+            <!-- Panel del Admin -->
+            <div id="admin-panel" class="hidden space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Gestión de Usuarios</h2>
+                <div id="admin-users" class="grid gap-4">
+                    <!-- Se llenará con JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Principal -->
+    <script src="js/app.js"></script>
+</body>
+</html>

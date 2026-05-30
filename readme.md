@@ -1,89 +1,92 @@
-domingo 12 de abril iniciamos proyecto con mensaje de Gmail de: profesor: Carlos Rene Angarita Sanguino
-correo: CARLOSRENEAS@ufps.edu.co
+# 🦷 CONSULTORIO ODONTOLÓGICO - Sistema Integral de Gestión Clínica
 
-""//Estimados estudiantes,
+> **Aplicación web profesional para gestión completa de consultorios odontológicos**  
+> Desarrollada con Node.js + TypeScript + Express + SQLite
 
-Cordial saludo.
+---
 
-Les informo que el día de mañana no tendremos jornada de clase. Sin embargo, es importante que comiencen a avanzar en el ejercicio correspondiente a la tercera nota.
+## ⚡ INICIO RÁPIDO
 
-Como ya tienen los grupos conformados y el tema asignado, deben iniciar con la definición del enunciado del proyecto, basado en la temática asignada.
+```bash
+npm install && npm run seed && npm run dev
+# Abrir: http://localhost:3000
+# Login: admin@gmail.com / Admin2026#
+```
 
-Adicionalmente, es necesario avanzar en los siguientes aspectos:
+**⭐ [Lee QUICKSTART.md para más detalles](QUICKSTART.md)**
 
-Definición del modelo de datos.
-Identificación y descripción de las features (funcionalidades) a desarrollar.
-Propuesta del diseño visual (paleta de colores, estilo, etc.).
-Elaboración de un primer prototipo de la aplicación, utilizando herramientas como Figma o Stitch.
-La idea es que, para la próxima clase, ya cuenten con un avance claro en estos puntos.
+---
 
-Quedo atento a cualquier inquietud.
+## 📚 DOCUMENTACIÓN
 
+| Documento | Contenido | Tiempo |
+|-----------|----------|--------|
+| [QUICKSTART.md](QUICKSTART.md) | 5 min para levantar | 5 min |
+| [RESUMEN_EJECUTIVO.md](RESUMEN_EJECUTIVO.md) | Qué recibiste | 10 min |
+| [GUIA_INSTALACION.md](GUIA_INSTALACION.md) | Paso a paso | 20 min |
+| [ESQUEMA_BD.md](ESQUEMA_BD.md) | Base de datos | 15 min |
+| [MANIFEST.md](MANIFEST.md) | Archivos entregados | 5 min |
+| [ARCHIVOS_CLAVE.md](ARCHIVOS_CLAVE.md) | Dónde está qué | 10 min |
+| [README_SETUP.md](README_SETUP.md) | Referencia técnica | 30 min |
 
+---
 
-Atentamente,
-""//
+## ✨ CARACTERÍSTICAS
 
-Iniciaremos con nuestro Trabajo Proyecto Consultorio Odontologico
+✅ Autenticación JWT segura  
+✅ Validación estricta (Gmail, contraseñas fuertes)  
+✅ 3 roles (Paciente, Odontólogo, Admin)  
+✅ Citas con conflicto detection  
+✅ Historiales clínicos  
+✅ Odontograma (JSON)  
+✅ Recuperación de contraseña vía email  
+✅ Logs de auditoría  
+✅ API REST (30+ endpoints)  
+✅ Frontend responsivo con Tailwind  
 
+---
 
------------------------PLAN DE TRABAJO------------------------------
-DATOS REMITENTE
-Estudiante: Harvey Santiago Gutierrez Hernandez
-Correo: harveysantiagoghguh@ufps.edu.co
-1152072
--------------------------------------------
-DATOS A ENTREGA
-Programacion Web
-Profesor: Carlos Rene Angarita Sanguino
-Correo: CARLOSRENEAS@ufps.edu.co
--------------------------------------------
-Universidad Francisco de Paula Santander
-2026
---------------------------------------------------------------------
---------------------------------------------------------------------
-* Sprint 1: Anuncio e Inicio del proyecto (Semana 1)
-semana del Lunes 13 de Abril al Viernes 17 de Abril
+## 🛠️ Stack
 
-- Objetivo: Tener la estructura pensada y el diseño textual listos.
+```
+Backend:    Node.js + Express + TypeScript
+Frontend:   HTML5 + CSS3 + Vanilla JS + Tailwind
+BD:         SQLite + Better-sqlite3
+Auth:       JWT + Bcrypt (12 rounds)
+Email:      Nodemailer + Gmail SMTP
+Security:   Helmet + CORS + Rate-Limiting
+```
 
-- Tareas clave:
-    + definición del enunciado del proyecto
-    + Definición del modelo de datos.
-    + Identificación y descripción de las features (funcionalidades) a desarrollar.
---------------------------------------------------------------------
+---
 
-* Sprint 2: Funcionalidad de Citas y Servicios (Semana 2)
-semana del Lunes 27 de Abril al Viernes 01 de Mayo
+## 🚀 Scripts
 
-- Objetivo: Propuesta del diseño visual (paleta de colores, estilo, etc.).
+```bash
+npm run dev              # Desarrollo con auto-reload
+npm run build            # Compilar TypeScript
+npm start                # Ejecutar build
+npm run seed             # Crear BD + datos
+npm run type-check       # Verificar tipos
+```
 
-- Tareas clave:
-    + Ir Documentando el Proyecto Web
-    + Elaboración de un primer prototipo de la aplicación, utilizando herramientas como Figma o Stitch.
-    + Elaborar Inicios de La pagina web basado en el prototipo
-    + Elaboracion de Seguridad para Inicio de Secion
+---
 
---------------------------------------------------------------------
-* Sprint 3: Funcionalidad secion con seguridades mejoras detallados (Semana 3)
-semana del Lunes 04 de Mayo al Viernes 08 de Mayo
+## 🎯 Usuarios de Prueba
 
-- Objetivo: Propuesta del diseño visual (paleta de colores, estilo, etc.).
+```
+admin@gmail.com → Admin2026# (Admin)
+dentist1@gmail.com → Dentist2026$ (Odontólogo)
+dentist2@gmail.com → Smile2026% (Odontólogo)
+patient1@gmail.com → Patient2026& (Paciente)
+patient2@gmail.com → Tooth2026# (Paciente)
+```
 
-- Tareas clave:
-    + Ir Documentando el Proyecto Web
-    + Funcional inicio y crear cuentas secion.
-    + Mejorar detallado de los usuarios y componentes de consulltorio
-    + Conecciones a redes sociaLes y formulaciones
+---
 
---------------------------------------------------------------------
+## 📖 Siguiente Paso
 
-* Sprint 4: Funcionalidad del Proyecto desplegado (Semana 4)
-semana del Lunes 11 de Mayo al Viernes 15 de Mayo
+👉 **Abre [QUICKSTART.md](QUICKSTART.md) y comienza en 5 minutos**
 
-- Objetivo: Pagina web completa.
+---
 
-- Tareas clave:
-    + Documentar completo el Proyecto Web
-    + Github y despliegue funcional
---------------------------------------------------------------------
+**Versión 1.0.0** | Mayo 2026
