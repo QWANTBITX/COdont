@@ -1,0 +1,73 @@
+.odontolyt-social-wrap {
+    width: 100%;
+}
+
+.odontolyt-social-wrap h4,
+.odontolyt-social-wrap h5 {
+    font-family: Manrope, Inter, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0e7490;
+    margin: 0 0 0.75rem;
+}
+
+.odontolyt-social-contact {
+    margin-bottom: 1.25rem;
+}
+
+.odontolyt-social-contact a {
+    font-size: 0.875rem;
+    color: #475569;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s;
+}
+
+.odontolyt-social-contact a:hover {
+    color: #0891b2;
+}
+
+.odontolyt-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.odontolyt-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background: #f1f5f9;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.odontolyt-social-icons a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #e2e8f0;
+}
+
+.odontolyt-social-icons svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    display: block;
+}
+
+.odontolyt-footer-bar {
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+.dark .odontolyt-footer-bar,
+footer.dark .odontolyt-footer-bar {
+    border-top-color: #334155;
+}

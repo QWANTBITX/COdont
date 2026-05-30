@@ -237,6 +237,10 @@ nav.scrolled {
     font-size: 1.5rem;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Login Page Styles */
 .login-container {
     height: 100vh;

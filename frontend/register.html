@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         .auth-sidebar {
             background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
@@ -155,6 +155,12 @@
                     <label for="terms">Acepto los <a href="#">Términos de Servicio</a> y la <a href="#">Política de Privacidad</a>.</label>
                 </div>
 
+                <div class="form-group">
+                    <label>Verificación de seguridad</label>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0 0 10px;">reCAPTCHA — confirma que eres humano (desafío de imágenes si aplica).</p>
+                    <div id="recaptcha-container" style="display: flex; justify-content: center; min-height: 78px;"></div>
+                </div>
+
                 <button type="submit" class="btn-primary">
                     Crear mi Cuenta <span>→</span>
                 </button>
@@ -181,6 +187,12 @@
         </main>
     </div>
 
-    <script src="main.js"></script>
+    <footer class="w-full bg-slate-100 border-t border-slate-200 mt-8">
+        <div data-odontolyt-social="bar"></div>
+    </footer>
+    <link rel="stylesheet" href="css/social-footer.css">
+    <script src="js/recaptcha.js"></script>
+    <script src="js/main-auth.js"></script>
+    <script src="js/social-footer.js"></script>
 </body>
 </html>
