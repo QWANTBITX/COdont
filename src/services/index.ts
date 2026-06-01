@@ -8,7 +8,13 @@ import {
   PasswordResetModel,
 } from '@models/index.js';
 import { generateToken, generateResetToken, hashResetToken } from '@utils/jwt.js';
-import { sendEmail, generatePasswordResetEmail, generateWelcomeEmail } from './emailService.js';
+import {
+  sendEmail,
+  generatePasswordResetEmail,
+  generateWelcomeEmail,
+  generateLoginNotificationEmail,
+  generateAppointmentNotificationEmail,
+} from './emailService.js';
 import { logAudit } from '@utils/logger.js';
 
 export class AuthService {
@@ -130,6 +136,16 @@ export class AuthService {
         status: 'success',
       });
 
+      const loginDate = new Date().toLocaleString('es-ES', {
+        year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      const emailContent = generateLoginNotificationEmail(user.full_name || user.email, loginDate);
+      await sendEmail({
+        to: user.email,
+        subject: emailContent.subject,
+        html: emailContent.html,
+      });
+
       return { token, user: { id: user.id, email: user.email, role: user.role, fullName: user.full_name } };
     } catch (error) {
       throw error;
@@ -208,10 +224,12 @@ export class AuthService {
 export class AppointmentService {
   private appointmentModel: AppointmentModel;
   private patientModel: PatientModel;
+  private userModel: UserModel;
 
   constructor(private db: Database) {
     this.appointmentModel = new AppointmentModel(db);
     this.patientModel = new PatientModel(db);
+    this.userModel = new UserModel(db);
   }
 
   getAppointmentsForPatient(userId: number) {
@@ -225,7 +243,7 @@ export class AppointmentService {
     return this.appointmentModel.findByDentistId(dentistId);
   }
 
-  createAppointment(
+  async createAppointment(
     userId: number,
     dentistId: number,
     appointmentDate: string,
@@ -241,7 +259,49 @@ export class AppointmentService {
       throw new Error('El odontólogo ya tiene una cita en esa fecha y hora');
     }
 
-    return this.appointmentModel.create(patient.id, dentistId, appointmentDate, durationMinutes, reason);
+    const result = this.appointmentModel.create(patient.id, dentistId, appointmentDate, durationMinutes, reason);
+    const appointmentId = (result as any).lastInsertRowid;
+
+    const patientUser = this.userModel.findById(userId);
+    const dentistUser = this.db
+      .prepare('SELECT u.* FROM dentists d JOIN users u ON d.user_id = u.id WHERE d.id = ?')
+      .get(dentistId);
+
+    const formattedDate = new Date(appointmentDate).toLocaleString('es-ES', {
+      year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+
+    if (patientUser) {
+      const patientEmailContent = generateAppointmentNotificationEmail(
+        patientUser.full_name || patientUser.email,
+        formattedDate,
+        dentistUser?.full_name || 'Odontólogo asignado',
+        patientUser.full_name || patientUser.email,
+        'patient'
+      );
+      await sendEmail({
+        to: patientUser.email,
+        subject: patientEmailContent.subject,
+        html: patientEmailContent.html,
+      });
+    }
+
+    if (dentistUser) {
+      const dentistEmailContent = generateAppointmentNotificationEmail(
+        dentistUser.full_name || dentistUser.email,
+        formattedDate,
+        dentistUser.full_name || 'Odontólogo',
+        patientUser.full_name || patientUser.email,
+        'dentist'
+      );
+      await sendEmail({
+        to: dentistUser.email,
+        subject: dentistEmailContent.subject,
+        html: dentistEmailContent.html,
+      });
+    }
+
+    return result;
   }
 
   updateAppointment(appointmentId: number, status: string, notes?: string) {

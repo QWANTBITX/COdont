@@ -57,7 +57,7 @@ export class AppointmentController {
 
       const validatedData = createAppointmentSchema.parse(req.body);
 
-      const result = this.appointmentService.createAppointment(
+      const result = await this.appointmentService.createAppointment(
         req.user.userId,
         validatedData.dentistId,
         validatedData.appointmentDate,

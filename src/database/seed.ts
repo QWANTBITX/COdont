@@ -19,9 +19,11 @@ async function seedDatabase() {
     `);
 
     // Hash de contraseñas de prueba (cada usuario tiene una contraseña distinta)
-    const hashedAdmin = await bcrypt.hash('Admin2026#', 12);
+    const hashedAdmin = await bcrypt.hash('IDEIOSDUEI#0$', 12);
     const hashedDentist1 = await bcrypt.hash('Dentist2026$', 12);
     const hashedDentist2 = await bcrypt.hash('Smile2026%', 12);
+    const hashedQwaAdmin = await bcrypt.hash('QwaAdmin11#', 12);
+    const hashedQwaUsuario = await bcrypt.hash('QwaUsuario11#', 12);
     const hashedPatient1 = await bcrypt.hash('Patient2026&', 12);
     const hashedPatient2 = await bcrypt.hash('Tooth2026#', 12);
 
@@ -35,11 +37,11 @@ async function seedDatabase() {
     `);
 
     const adminId = (adminStmt.run(
-      'admin@gmail.com',
+      'IDEIOSDUEI@GMAIL.COM',
       hashedAdmin,
       'admin',
       'Dr. Administrador',
-      '1234567890',
+      '3224697869',
       'active'
     ) as any).lastInsertRowid;
 
@@ -91,6 +93,24 @@ async function seedDatabase() {
       'active'
     ) as any).lastInsertRowid;
 
+    const qwaAdminId = (patientStmt.run(
+      'QwaAdmin@gmail.com',
+      hashedQwaAdmin,
+      'patient',
+      'Qwa Admin',
+      '3224697869',
+      'active'
+    ) as any).lastInsertRowid;
+
+    const qwaUsuarioId = (patientStmt.run(
+      'qwausuario@gmail.com',
+      hashedQwaUsuario,
+      'patient',
+      'Qwa Usuario',
+      '3143258995',
+      'active'
+    ) as any).lastInsertRowid;
+
     // Crear perfiles de pacientes
     console.log('👥 Creando perfiles de pacientes...');
 
@@ -126,6 +146,34 @@ async function seedDatabase() {
       '6666666666',
       'Sulfamidas',
       'Metformina'
+    );
+
+    patientProfileStmt.run(
+      qwaAdminId,
+      '1992-02-14',
+      'M',
+      '11223344',
+      'Calle Qwa 12',
+      'Bogotá',
+      '110111',
+      'Mario Qwa',
+      '3224697869',
+      'Ninguna',
+      'Ninguno'
+    );
+
+    patientProfileStmt.run(
+      qwaUsuarioId,
+      '1995-11-03',
+      'F',
+      '44332211',
+      'Carrera 45 #67-89',
+      'Medellín',
+      '050010',
+      'Laura Usuario',
+      '3143258995',
+      'Ninguna',
+      'Ninguno'
     );
 
     // Crear perfiles de odontólogos
@@ -210,7 +258,9 @@ async function seedDatabase() {
 📊 Datos de prueba creados:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   👤 Usuarios:
-    • Admin: admin@gmail.com / Admin2026#
+    • Admin: IDEIOSDUEI@GMAIL.COM / IDEIOSDUEI#0$
+    • Usuario: QwaAdmin@gmail.com / QwaAdmin11#
+    • Usuario: qwausuario@gmail.com / QwaUsuario11#
     • Odontólogo 1: dentist1@gmail.com / Dentist2026$
     • Odontólogo 2: dentist2@gmail.com / Smile2026%
     • Paciente 1: patient1@gmail.com / Patient2026&

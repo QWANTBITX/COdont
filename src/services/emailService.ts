@@ -188,3 +188,89 @@ ${loginUrl}
 
   return { subject, html, text };
 }
+
+export function generateLoginNotificationEmail(
+  userName: string,
+  loginDate: string
+): { subject: string; html: string; text: string } {
+  const subject = 'Notificación de inicio de sesión - Codont';
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 28px;">🦷 Codont</h1>
+      </div>
+      <div style="background: white; padding: 30px; border: 1px solid #e0e0e0; border-radius: 0 0 8px 8px;">
+        <h2 style="color: #333; margin-top: 0;">Hola ${userName},</h2>
+        <p style="color: #666; line-height: 1.6;">Se ha registrado un acceso exitoso a tu cuenta en Codont.</p>
+        <p style="color: #666; line-height: 1.6;">Fecha y hora del inicio de sesión: <strong>${loginDate}</strong></p>
+        <p style="color: #666; line-height: 1.6;">Si no fuiste tú, por favor contacta al soporte del consultorio.</p>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
+        <p style="color: #999; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} Codont. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  `;
+
+  const text = `
+Notificación de inicio de sesión - Codont
+
+Hola ${userName},
+
+Se ha registrado un acceso exitoso a tu cuenta en Codont.
+Fecha y hora del inicio de sesión: ${loginDate}
+
+Si no fuiste tú, por favor contacta al soporte del consultorio.
+
+© ${new Date().getFullYear()} Codont. Todos los derechos reservados.
+  `;
+
+  return { subject, html, text };
+}
+
+export function generateAppointmentNotificationEmail(
+  recipientName: string,
+  appointmentDate: string,
+  dentistName: string,
+  patientName: string,
+  role: 'patient' | 'dentist'
+): { subject: string; html: string; text: string } {
+  const subject = role === 'patient'
+    ? 'Cita odontológica programada - Codont'
+    : 'Nueva cita asignada - Codont';
+
+  const html = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 8px 8px 0 0; text-align: center;">
+        <h1 style="color: white; margin: 0; font-size: 28px;">🦷 Codont</h1>
+      </div>
+      <div style="background: white; padding: 30px; border: 1px solid #e0e0e0; border-radius: 0 0 8px 8px;">
+        <h2 style="color: #333; margin-top: 0;">Hola ${recipientName},</h2>
+        <p style="color: #666; line-height: 1.6;">Se ha agendado una cita odontológica ${role === 'patient' ? 'para ti' : 'a tu cargo'}.</p>
+        <p style="color: #666; line-height: 1.6;"><strong>Fecha y hora:</strong> ${appointmentDate}</p>
+        <p style="color: #666; line-height: 1.6;"><strong>Paciente:</strong> ${patientName}</p>
+        <p style="color: #666; line-height: 1.6;"><strong>Odontólogo:</strong> ${dentistName}</p>
+        <p style="color: #666; line-height: 1.6;">Por favor, revisa tu agenda y confirma tu disponibilidad.</p>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
+        <p style="color: #999; font-size: 12px; text-align: center;">© ${new Date().getFullYear()} Codont. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  `;
+
+  const text = `
+${role === 'patient' ? 'Cita odontológica programada' : 'Nueva cita asignada'}
+
+Hola ${recipientName},
+
+Se ha agendado una cita odontológica ${role === 'patient' ? 'para ti' : 'a tu cargo'}.
+
+Fecha y hora: ${appointmentDate}
+Paciente: ${patientName}
+Odontólogo: ${dentistName}
+
+Por favor, revisa tu agenda y confirma tu disponibilidad.
+
+© ${new Date().getFullYear()} Codont. Todos los derechos reservados.
+  `;
+
+  return { subject, html, text };
+}

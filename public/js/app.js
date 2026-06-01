@@ -205,6 +205,14 @@ async function showDashboard() {
   document.getElementById('user-name').textContent = currentUser.fullName || currentUser.email;
   const roleNames = { admin: 'Administrador', dentist: 'Odontólogo', patient: 'Paciente' };
   document.getElementById('user-role').textContent = roleNames[currentUser.role] || 'Usuario';
+
+  const dashboardWelcome = document.getElementById('dashboard-welcome');
+  if (dashboardWelcome) {
+    dashboardWelcome.innerHTML = `
+      <h2 class="text-3xl font-bold">Bienvenido a Codont, ${currentUser.fullName || currentUser.email}</h2>
+      <p class="text-slate-100 mt-2">Has iniciado sesión correctamente. Revisa tus citas y recibe notificaciones por correo electrónico en cada inicio de sesión y cita programada.</p>
+    `;
+  }
   
   // Ocultar todos los paneles
   document.getElementById('patient-panel').classList.add('hidden');
